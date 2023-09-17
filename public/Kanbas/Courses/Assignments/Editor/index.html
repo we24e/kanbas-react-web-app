@@ -1,0 +1,73 @@
+<select>
+    <option>SpeedGrader</option>
+</select>
+<hr>
+<label for = "assignname"><h3>Assignment Name</h3></label>
+<input value = "A1 - ENV + HTML" id = "assignname" placeholder="Assignment Name"/>
+
+<br/><br/>Description<br/>
+<textarea cols="35" rows="5">This is an assignment description.</textarea>
+
+<br/><br/>Points<br/>
+<input value="100" type="number"/>
+
+<br/><br/>Assignment Group<br/>
+<select>
+    <option>ASSIGNMENTS</option>
+    <option>QUIZZES</option>
+    <option>EXAMS</option>
+    <option>PROJECT</option>
+</select>
+
+<br/><br/>Display Grade as<br/>
+<select>
+    <option>Percentage</option>
+</select>
+
+<br/><br/>Submission Types<br/>
+<select>
+    <option>Online</option>
+</select><br/>
+<label><input type="checkbox" checked/>Text Entry<br/></label>
+<label><input type="checkbox" />Website URL<br/></label>
+<label><input type="checkbox" />Media Recordings<br/></label>
+<label><input type="checkbox" checked/>File Uploads<br/></label>
+<label><input type="checkbox" />Student Annotation</label>
+
+<br/><br/>Submission Attempts<br/>
+<select>
+    <option>Unlimited</option>
+    <option>1</option>
+    <option>2</option>
+    <option>5</option>
+</select>
+
+<br/><br/>Plagiarism Review<br/>
+<select>
+    <option>None</option>
+</select>
+
+<br/><br/>Group Assignment<br/>
+<label><input type="checkbox"/>This is a group assignment<br/></label>
+
+<br/>Peer Reviews<br/>
+<label><input type="checkbox"/>Require Peer Reviews<br/></label>
+
+<br/>Assign<br/>Assign to<br/>
+<input value="Everyone"/>
+
+<br/><br/>Due<br/>
+<input type="date" value="2023-09-18">
+
+<br/><br/>Available from<br/>
+<input type="date" value="2023-09-07">
+
+<br/><br/>Until<br/>
+<input type="date" value="2023-09-20">
+
+<br/><br/>
+
+<form action="/Kanbas/Courses/Assignments/screen.html">
+    <button>Cancel</button>
+    <button>Save</button>
+</form>
