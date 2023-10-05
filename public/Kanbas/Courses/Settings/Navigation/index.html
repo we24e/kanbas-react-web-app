@@ -1,169 +1,180 @@
-<table width="100%">
-    <thead>
-        <tr>
-            <th><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html" style="text-decoration: none;"><font color="red">Course Details</font></a></th>
-            <th><a href="#" style="text-decoration: none;"><font color="red">Sections</font></a></th>
-            <th>Navigation</th>
-            <th><a href="#" style="text-decoration: none;"><font color="red">Apps</font></a></th>
-            <th><a href="#" style="text-decoration: none;"><font color="red">Feature Options</font></a></th>
-            <th><a href="#" style="text-decoration: none;"><font color="red">Integrations</font></a></th>
-        </tr>
-    </thead>
-</table>
-<hr/>
+<link rel="stylesheet" href="../../Nav/index.css"/>
+<link rel="stylesheet" href="../../../Navigation/index.css"/>
+<link rel="stylesheet" href="../../../index.css"/>
+<link rel="stylesheet" href="../../../Header/index.css"/>
+<link rel="stylesheet" href="../../../../vendors/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../../vendors/fontawesome/css/font-awesome.css"/>
 
-<table width="100%">
-    <tbody>
-        <tr>
-            <td width="50%" valign="top">
-                <p>Drag and drop items to reorder them in the course navigation.</p>
-                <table border="1">
-                    <tbody>
-                        <tr>
-                            <td width="400px">&#x22EE;&nbsp;Home</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Modules</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Piazza</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Zoom Meetings</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Assignments</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Quizzes</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Grades</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;People</td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Panopto Video</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>Drag items here to hide them from students.</h4>
-                <p>Disabling most pages will cause students who visit those pages to be redirected to the course home page.</p>
-                <table border="1">
-                    <tbody>
-                        <tr>
-                            <td width="400px">&#x22EE;&nbsp;Chat
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;SCORM
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Attendance
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Barnes and Noble Bookstore
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Digication
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Top Hat
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- <tr height="50">
-                    <td></td>
-                    <td></td>
-                </tr> -->
-            </td>
+<div class="container-fluid">
+    <ul class="nav nav-tabs d-flex">
+        <li class="nav-item flex-fill">
+            <a class="nav-link wd-red-text" href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Course Details</a>
+        </li>
+        <li class="nav-item flex-fill ">
+            <a class="nav-link wd-red-text" href="#">Sections</a>
+        </li>
+        <li class="nav-item flex-fill">
+            <a class="nav-link active" href="/Kanbas/Courses/Settings/Navigation/screen.html">Navigation</a>
+        </li>
+        <li class="nav-item flex-fill ">
+            <a class="nav-link wd-red-text" href="#">Apps</a>
+        </li>
+        <li class="nav-item flex-fill ">
+            <a class="nav-link wd-red-text" href="#">Feature Options</a>
+        </li>
+    </ul>
+</div>
+<br/>
+    <span class="m-2 mt-4 wd-fontsize-large">Drag and drop items to reorder them in the course navigation.</span>
+    <br/><br/>
+<div class="list-group wd-modules ms-2 mt-2 me-2 mb-2">
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Home</span>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Modules</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Piazza</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Zoom Meetings</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Assignments</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Quizzes</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Grades</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">People</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+        <div class="ms-1 list-group-item list-group-item-action">
+            <span class="ms-4">Panopto Video</span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        </div>
+</div>
+<br/>
+    <span class="m-2 mt-4 wd-fontsize-large">Drag items here to hide them from students.</span><br/>
+    <span class="wd-fontsize-small m-2">Disabling most pages will cause students who visit those pages to be redirected to the course home page.</span>
+    <br/><br/>
 
-            <td width="50%" valign="top">
-                <table border="1">
-                    <tbody>
-                        <tr>
-                            <td width="400px">&#x22EE;&nbsp;Syllabus
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, will redirect to the course home page</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Perusall
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Microsoft Teams Meetings
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;FACT Reporting and Photo Roster
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Progress Reports (Navigate)
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Microsoft Teams for Canvas
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;VHL Central
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Gradescope 1.3
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;Credentials
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&#x22EE;&nbsp;iClicker
-                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <small><sup>Page disabled, won't appear in navigation</sup></small>
-                            </td>
-                        </tr>
-                            
-                    </tbody>
-                </table>
-                </br><button style="width: 50px; height: 30px; color: white; background-color: red">Save</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="list-group wd-modules ms-2 mt-2 me-2 mb-2">
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Chat</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">SCORM</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Attendance</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Barnes and Noble Bookstore</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Digication</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Top Hat</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+
+
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Syllabus</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, will redirect to the course home page</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Perusall</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Microsoft Teams Meetings</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">FACT Reporting and Photo Roster</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Progress Reports (Navigate)</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Microsoft Teams for Canvas</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">VHL Central</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Gradescope 1.3</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">Credentials</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+    <div class="ms-1 list-group-item list-group-item-action">
+        <span class="ms-4">iClicker</span>
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <br/>
+        <span class="ms-5 wd-fontsize-small">Page disabled, won't appear in navigation</span>
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary btn-lg btn-danger m-2">
+    Save
+</button>

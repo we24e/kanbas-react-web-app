@@ -1,73 +1,158 @@
-<select>
-    <option>SpeedGrader</option>
-</select>
-<hr>
-<label for = "assignname"><h3>Assignment Name</h3></label>
-<input value = "A1 - ENV + HTML" id = "assignname" placeholder="Assignment Name"/>
+<link rel="stylesheet" href="../../../index.css"/>
+<link rel="stylesheet" href="../../../../vendors/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../../vendors/fontawesome/css/font-awesome.css"/>
 
-<br/><br/>Description<br/>
-<textarea cols="35" rows="5">This is an assignment description.</textarea>
+<script src="../../../../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<br/><br/>Points<br/>
-<input value="100" type="number"/>
+<div class="wd-mod-buttons d-flex justify-content-end me-2 mt-2">
+    <div class="me-3 mt-1" style="color:green;">
+        <i class="fa fa-check-circle" style="color:green;"aria-hidden="true"></i> Published
+    </div>
+    <button type="button" class="btn btn-outline-dark btn-light"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+</div>
+<hr/>
+<form>
+    <div class="ms-2 me-2 mb-2 mt-2 pe-2">
+        <label for="assignname" class="form-label">Assignment Name</label>
+        <input class="form-control pb-2 pt-2" id="assignname" value="A1 - ENV + HTML"/>
+        <textarea class="form-control mt-4 pb-2 pt-2" id="assigndes" rows="4">This is an assignment description.</textarea>
+    </div>
+</form>
 
-<br/><br/>Assignment Group<br/>
-<select>
-    <option>ASSIGNMENTS</option>
-    <option>QUIZZES</option>
-    <option>EXAMS</option>
-    <option>PROJECT</option>
-</select>
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div class="w-75">
 
-<br/><br/>Display Grade as<br/>
-<select>
-    <option>Percentage</option>
-</select>
+            <div class="mt-3 row">
+                <label for="points" class="col-sm-4 col-form-label text-end">Points</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="points" value="100" min="0">
+                </div>
+            </div>
 
-<br/><br/>Submission Types<br/>
-<select>
-    <option>Online</option>
-</select><br/>
-<label><input type="checkbox" checked/>Text Entry<br/></label>
-<label><input type="checkbox" />Website URL<br/></label>
-<label><input type="checkbox" />Media Recordings<br/></label>
-<label><input type="checkbox" checked/>File Uploads<br/></label>
-<label><input type="checkbox" />Student Annotation</label>
+            <div class="mt-4 row">
+                <label for="assignmentgrp" class="col-sm-4 col-form-label text-end">Assignment Group</label>
+                <div class="col-sm-8">
+                    <button class="btn btn-light btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="assignmentgrp" data-bs-toggle="dropdown">
+                        ASSIGNMENTS
+                    </button>
+                    <ul class="dropdown-menu w-40" aria-labelledby="assignmentgrp">
+                        <li><a class="dropdown-item" href="#">ASSIGNMENTS</a></li>
+                        <li><a class="dropdown-item" href="#">QUIZZES</a></li>
+                        <li><a class="dropdown-item" href="#">EXAMS</a></li>
+                        <li><a class="dropdown-item" href="#">PROJECT</a></li>
+                    </ul>
+                </div>
+            </div>
 
-<br/><br/>Submission Attempts<br/>
-<select>
-    <option>Unlimited</option>
-    <option>1</option>
-    <option>2</option>
-    <option>5</option>
-</select>
+            <div class="mt-4 row">
+                <label for="assignmentgrp" class="col-sm-4 col-form-label text-end">Display Grade as</label>
+                <div class="col-sm-8">
+                    <button class="btn btn-light btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="assignmentgrp" data-bs-toggle="dropdown">
+                        Percentage
+                    </button>
+                    <ul class="dropdown-menu w-40" aria-labelledby="assignmentgrp">
+                        <li><a class="dropdown-item" href="#">Percentage</a></li>
+                    </ul>
+                </div>
+            </div>
 
-<br/><br/>Plagiarism Review<br/>
-<select>
-    <option>None</option>
-</select>
+            <div class="mt-4 mb-3 row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="doNotShow">
+                        <label class="form-check-label" for="doNotShow">
+                            Do not show this assignment towards the final grade
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-<br/><br/>Group Assignment<br/>
-<label><input type="checkbox"/>This is a group assignment<br/></label>
 
-<br/>Peer Reviews<br/>
-<label><input type="checkbox"/>Require Peer Reviews<br/></label>
+            <div class="mt-4 row">
+                <label class="col-sm-4 col-form-label text-end">Submission Type</label>
+                <div class="col-sm-8 border p-3">
+                    <div class="mb-3">
+                        <button class="btn btn-light btn-outline-secondary dropdown-toggle w-50 text-start" type="button" id="submissionType" data-bs-toggle="dropdown">
+                            Online
+                        </button>
+                        <ul class="dropdown-menu w-40">
+                            <li><a class="dropdown-item" href="#">Online</a></li>
+                        </ul>
+                    </div>
+                    <div class="mb-2 fw-bold">Online Entry Options</div>
+                    <div class="form-check mt-2">
+                        <label class="form-check-label w-100">
+                            <input type="checkbox" class="form-check-input" checked/> Text Entry
+                        </label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <label class="form-check-label w-100">
+                            <input type="checkbox" class="form-check-input"/> Website URL
+                        </label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <label class="form-check-label w-100">
+                            <input type="checkbox" class="form-check-input"/> Media Recordings
+                        </label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <label class="form-check-label w-100">
+                            <input type="checkbox" class="form-check-input" checked/> File Uploads
+                        </label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <label class="form-check-label w-100">
+                            <input type="checkbox" class="form-check-input"/> Student Annotation
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+            <div class="mt-4 row">
+                <label class="col-sm-4 col-form-label text-end">Assign</label>
+                <div class="col-sm-8 border p-3">
+                    <div class="mb-3">
+                        <label for="AssignTo" class="fw-bold col-form-label w-50 text-start">Assign to</label>
+                        <input class="form-control pt-2 pb-2" id="AssignTo" value="Everyone"/>
+                    </div>
 
-<br/>Assign<br/>Assign to<br/>
-<input value="Everyone"/>
+                    <div class="mb-3">
+                        <label for="due" class="fw-bold col-form-label w-50 text-start">Due</label>
+                        <input type="date" class="form-control pt-2 pb-2" id="due" value="2023-09-18"/>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="Available" class="fw-bold col-form-label text-start">Available from</label>
+                            <input type="date" class="form-control pt-2 pb-2" id="Available" value="2023-09-08"/>
+                        </div>
+                        <div class="col">
+                            <label for="until" class="fw-bold col-form-label text-start">Until</label>
+                            <input type="date" class="form-control pt-2 pb-2" id="until" value="2023-09-22"/>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-light btn-outline-secondary w-100 mt-1">+ Add</button>
+                </div>
+            </div>
 
-<br/><br/>Due<br/>
-<input type="date" value="2023-09-18">
+        </div>
+    </div>
+</div>
 
-<br/><br/>Available from<br/>
-<input type="date" value="2023-09-07">
+<hr class="w-100"/>
+<form action="/Kanbas/Courses/Assignments/screen.html" method="get">
+    <label>
+        <input type="checkbox" class="float-left" />
+        Notify users that this content has changed
+        <br class="d-md-none" />
+    </label>
+    <button type="submit" class="btn btn-primary btn-lg btn-danger float-end">
+        Save Profile
+    </button>
+    <button type="submit" class="me-1 btn btn-secondary btn-outline-dark btn-lg btn-light float-end">
+        Cancel
+    </button>
 
-<br/><br/>Until<br/>
-<input type="date" value="2023-09-20">
-
-<br/><br/>
-
-<form action="/Kanbas/Courses/Assignments/screen.html">
-    <button>Cancel</button>
-    <button>Save</button>
 </form>

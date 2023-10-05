@@ -1,0 +1,61 @@
+header i {
+    margin: 10px;
+    color:red;
+    font-size: 2em !important;
+}
+
+header span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    vertical-align: super;
+}
+
+.wd-name{
+    margin-left: 10px;
+    margin-bottom: 45px;
+}
+
+.wd-contact h2 {
+    margin-bottom: 10px;
+}
+
+.wd-contact {
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.wd-contact a {
+    text-decoration: none; 
+    color: red; 
+}
+
+.wd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+i.fa.fa-user-circle-o.wd-account {
+    color: grey;
+    font-size: 10em;
+    margin-left: 10px;
+}
+
+.wd-edit button {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.wd-edit i.fa-pencil {
+    transform: rotate(25deg);
+    margin-right: 5px;
+}
+
+.wd-lhs-icon{
+    font-size: 2.2rem; 
+}
+
+a {
+    text-decoration: none !important;
+}

@@ -1,60 +1,98 @@
-<h2>Xuyang Wang</h2>
+<link  href="index.css" rel="stylesheet"/>
+<link  href="../../../../vendors/fontawesome/css/font-awesome.css" rel="stylesheet"/>
+<link  href="../../../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
-Name:*<br/>
-<input value="Xuyang Wang"/>
-<br/><br/>
-Pronouns:<br/>
-<select>
-    <option>None</option>
-    <option>He/Him</option>
-    <option>She/Her</option>
-    <option>They/Them</option>
-    <option>He/They</option>
-    <option>She/They</option>
-    <option>He/She/They</option>
-</select>
-<br/><br/>
-Title:<br/>
-<input/>
+<header><i class="fa fa-bars" aria-hidden="true"></i><span>Xuyang Wang' Profile</span></header>
+<hr><br/>
 
-<h3>Contact</h3>
-No registered services, you can add some on the <a href="#">settings</a> page.
+<div class="wd-header">
+    <i class="fa fa-user-circle-o wd-account" aria-hidden="true"></i>
+    <form class="wd-edit" action="/Kanbas/Account/Profile/screen.html">
+        <div class="float-end">
+            <button class="btn btn-outline-dark btn-light">
+                <i class="fa fa-pencil" aria-hidden="true"></i> Cancel Editing
+            </button>
+        </div>
+    </form>
+</div>
 
-<h3>Biography</h3>
-<textarea cols="40" rows="5">Graduate student graduated from Rutgers.</textarea>
+<div class="mb-3">
+    <h5>Name:*</h5>
+    <input class="form-control" value="Xuyang Wang">
+</div>
 
-<h3>Links</h3>
-<ul>
-    <li><a href="https://www.youtube.com">YouTube</a></li>
-</ul>
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th></th>
-            <th>URL</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input value="YouTube"/></td>
-            <td>→</td>
-            <td><input value="https://www.youtube.com"/></td>
-            <td><a href="#">Remove</a>
-        </tr>
-        <tr>
-            <td><input/></td>
-            <td>→</td>
-            <td><input/></td>
-        </tr>
-    </tbody>
-</table>
+<div class="form-group">
+    <h5>Pronouns:</h5>
+    <select class="form-select">
+        <option>None</option>
+        <option>He/Him</option>
+        <option>She/Her</option>
+        <option>They/Them</option>
+        <option>He/They</option>
+        <option>She/They</option>
+        <option>He/She/They</option>
+    </select>
+</div>
 
-<button>Add another link</button>
+<div class="mb-3">
+    <h5>Title:</h5>
+    <input class="form-control">
+</div>
+<br/>
 
-<form action="/Kanbas/Account/Profile/screen.html">
+<div class="wd-contact"><h2>Contact</h2>
+    No registered services, you can add some on the <a href="#">settings</a> page.
+</div>
+
+<div class="mb-3">
+    <h2>Biography</h2>
+    <textarea class="form-control">Graduate student graduated from Rutgers.</textarea>
+</div>
+
+
+<div class="wd-edit-links">
+    <h2>Links</h2>
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <label class="middle-label" for="title1">Title</label>
+            <input class="form-control" type="text" id="title1" value="YouTube">
+        </div>
+        <div class="col-auto">
+            <label for="arrow" class="m-0">→</label>
+        </div>
+        <div class="col-auto">
+            <label class="middle-label" for="url1">URL</label>
+            <input class="form-control" type="url" id="url1" value="https://www.youtube.com/@WebDevTV">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-link wd-remove-link" type="button">X</button>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <input class="form-control" type="text" placeholder="Title">
+        </div>
+        <div class="col-auto">
+            <label for="arrow" class="m-0">→</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" type="url" placeholder="URL">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-link wd-remove-link" type="button">X</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <button class="btn wd-another-link btn-light btn-outline-dark" type="button">Add another link</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<form action="/Kanbas/Account/Profile/screen.html" method="get"> 
     <div align="right">
-        <button>Cancel</button>
-        <button>Save Profile</button>
+        <button type="submit" class="btn btn-secondary btn-outline-dark btn-lg btn-light">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-danger wd-save">Save Profile</button>
     </div>
 </form>

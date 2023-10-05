@@ -1,96 +1,294 @@
-<button>Collapse All</button>
-<button>View Progress</button>
-<select>
-    <option>Publish All</option>
-    <option>Publish all modules and items</option>
-    <option>Publish modules only</option>
-    <option>Unpublish all modules and items</option>
-</select>
-<button>+ Module</button>
+<link  href="../../index.css" rel="stylesheet"/>
+<link  href="index.css" rel="stylesheet"/>
+<link  href="../../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link  href="../../../vendors/fontawesome/css/font-awesome.css" rel="stylesheet"/>
+<script src="../../../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<div class="wd-mod-buttons d-flex justify-content-end me-2 mt-2">
+    <button type="button" class="btn btn-outline-dark btn-light me-1">Collapse All</button>
+    <button type="button" class="btn btn-outline-dark btn-light me-1">View Progress</button>
+    <div class="dropdown me-1">
+        <button type="button" class="btn btn-outline-dark btn-light dropdown-toggle" data-bs-toggle="dropdown">
+            <i class="fa fa-check-circle-o" style="color:rgb(22, 189, 22);"aria-hidden="true"></i> Publish All
+         </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Publish all modules and items</a></li>
+        <li><a class="dropdown-item" href="#">Publish modules only</a></li>
+        <li><a class="dropdown-item" href="#">Unpublish all modules and items</a></li>
+      </ul>
+    </div>
 
-<ul>
-    <li>Week 0 - INTRO</li>
-    <ul>
-        <li>LEARNING OBJECTIVES</li>
-        <ul>
-            <li>Introduction to the course</li>
-            <li>Learn what is Web Development</li>
-            <li>Creating a development environment</li>
-            <li>Creating a Web Application</li>
-            <li>Getting started with the 1st assignment</li>
-        </ul>
-        <li>READING</li>
-        <ul>
-            <li>Full Stack Developer - Chapter 1 - Introduction</li>
-            <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
-            <!-- <li></li> -->
-        </ul>
-        <li>SLIDES</li>
-        <ul>
-            <li><a href="#">Introduction to Web Development</a></li>
-            <li><a href="#">Creating an HTTP server with Node.js</a></li>
-            <li><a href="#">Creating a React Application</a></li>
-            <li><a href="#">Commit your source to GitHub.com</a></li>
-            <li><a href="#">Deploying to Netlify</a></li>
-            <li><a href="#">Deploying multiple branches in Netlify</a></li>
-        </ul>
-        <li>EVALUATIONS</li>
-        <ul>
-            <li><a href="#">A1 - ENV + HTML</a></li>
-        </ul>
-        <li>YOUTUBE - Please subscribe, like and share my videos on YouTube</li>
-        <ul>
-            <li><a href="https://youtu.be/YzZz16Gtfdc">Introduction to Web Development - like and subscribe!</a></li>
-        </ul>
-    </ul>
+    <button type="button" class="btn btn-danger me-1">+ Module</button>
+    <button type="button" class="btn btn-outline-dark btn-light"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+</div>
 
-    <br/>
+<div class="list-group wd-modules ms-2 mt-2 me-2 mb-2 wd-green-left-border">
+    <div class="list-group-item list-group-item-secondary fw-bold">
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <i class="fa fa-plus float-end ms-4" aria-hidden="true"></i>
+        <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        Week 0 - INTRO
+    </div>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-1 fw-bold">
+            LEARNING OBJECTIVES
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Introduction to the course
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Learn what is Web Development
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Creating a development environment
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Creating a Web Application
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Getting started with the 1st assignment
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-1 fw-bold">
+            READING
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Full Stack Developer - Chapter 1 - Introduction
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-1 fw-bold">
+            SLIDES
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Introduction to Web Development 
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Creating an HTTP server with Node.js
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Commit your source to GitHub.com
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Deploying to Netlify
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Deploying multiple branches in Netlify
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+</div>
 
-    <li>Week 1 - HTML</li>
-    <ul>
-        <li>LEARNING OBJECTIVES</li>
-        <ul>
-            <li>Learn how to create user interfaces with HTML</li>
-            <li>Keep working on assignment 1</li>
-            <li>Deploy the assignment to Netlify</li>
-        </ul>
-
-        <li>READING</li>
-        <ul>
-            <li>Full Stack Developer - Chapter 1 - Introduction</li>
-            <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
-        </ul>
-
-        <li>SLIDES</li>
-        <ul>
-            <li><a href="#">Introduction to HTML and the DOM</a></li>
-            <li><a href="#">Formatting Web content with Headings and Paragraphs</a></li>
-            <li><a href="#">Formatting content with Lists and Tables</a></li>
-            <li><a href="#">Creating Web Forms</a></li>
-            <li><a href="#">Navigating with Anchors</a></li>
-            <li><a href="#">Embedding content with Iframes</a></li>
-            <li><a href="#">Drawing with Scalable Vector Graphics</a></li>
-            <li><a href="#">HTML - all the slides above</a></li>
-        </ul>
-
-        <li>EVALUATIONS</li>
-        <ul>
-            <li><a href="#">A1 - ENV + HTML</a></li>
-            <li><a href="#">Project</a></li>
-        </ul>
-        <li>PROJECT</li>
-        <ul>
-            <li><a href="#">Project Requirements</a></li>
-        </ul>
-        <li>YOUTUBE - Please subscribe, like and share my videos on YouTube</li>
-        <ul>
-            <li><a href="https://youtu.be/EeYwdytpSDs">Getting Started with Assignment 1 - Please like, subscribe, share</a></li>
-        </ul>
-        <li>TWITTER / X</li>
-        <ul>
-            <li><a href="https://x.com/jannunzi/status/1701939457224565057?s=20">Getting Started with Assignment 1 - Please like, subscribe, share</a></li>
-        </ul>
-    </ul>
-
-
-</ul>
+<div class="list-group mt-5 wd-modules ms-2 mt-2 me-2 mb-2 wd-green-left-border">
+    <div class="list-group-item list-group-item-secondary fw-bold">
+        <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+        <i class="fa fa-plus float-end ms-4" aria-hidden="true"></i>
+        <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        Week 1 - HTML
+    </div>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-1 fw-bold">
+            Learning Objectives
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Learn how to create user interfaces with HTML
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Keep working on assignment 1
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Deploy the assignment to Netlify
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-1 fw-bold">
+            READING
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Full Stack Developer - Chapter 1 - Introduction
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-4">
+            Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <div class="ms-1 fw-bold">
+            SLIDES
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Introduction to HTML and the DOM
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Formatting Web content with Headings and Paragraphs
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Formatting content with Lists and Tables
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Creating Web Forms
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Navigating with Anchors
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Embedding content with Iframes
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>Drawing with Scalable Vector Graphics
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action wd-hyperlink">
+        <div class="ms-1">
+            <i class="fa fa-link me-2" aria-hidden="true"></i>
+            <span>HTML - all the slides above
+             <i class="fa fa-external-link ms-1" aria-hidden="true">
+            </i></span>
+            <i class="fa fa-ellipsis-v float-end ms-4" aria-hidden="true"></i>
+            <i class="fa fa-check-circle float-end ms-4" aria-hidden="true"></i>
+        </div>
+    </a>
+</div>

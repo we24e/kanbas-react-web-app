@@ -1,0 +1,115 @@
+.wd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+i.fa.fa-user-circle-o.wd-account {
+    color: grey;
+    font-size: 10em;
+    margin-left: 10px;
+}
+
+.wd-edit button {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.wd-edit i.fa-pencil {
+    transform: rotate(25deg);
+    margin-right: 5px;
+}
+
+header i {
+    margin: 10px;
+    color:red;
+    font-size: 2em !important;
+}
+
+header span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    vertical-align: super;
+}
+
+.mb-3 {
+    margin-left: 10px;
+    width: 350px;
+}
+
+.mb-3 h5{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.mb-3 textarea{
+    width: 350px;
+    height:120px;
+}
+
+.form-group{
+    margin-left: 10px;
+    width: 250px;
+    margin-bottom: 16px;
+}
+
+.form-group h5{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.wd-contact h2 {
+    margin-bottom: 10px;
+}
+
+.wd-contact {
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.wd-contact a {
+    text-decoration: none; 
+    color: red; 
+}
+
+.wd-edit-links {
+    margin-left: 10px;
+}
+
+.middle-label {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.col-auto label[for="arrow"] {
+    padding-top: 10px;
+}
+
+.wd-remove-link {
+    color: red !important; 
+    text-decoration: none !important;
+    padding: 0px !important;
+    border: 0 !important;
+    padding-top: 10px!important;
+}
+
+
+.wd-another-link {
+    padding: 5px !important;
+}
+/* 
+.wd-cancel{
+    background-color: rgb(240, 240, 240) !important;
+    border-color: rgb(172, 172, 172) !important;
+    color : black !important;
+} */
+
+.wd-save{
+    /* background-color: rgb(229, 51, 51) !important;
+    border-color: rgb(172, 172, 172) !important;
+    color : white !important; */
+    margin-right: 10px;
+}
