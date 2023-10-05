@@ -1,0 +1,123 @@
+body {
+    margin: 0 !important;
+    /* margin-left: 10px !important; */
+    padding: 0 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+knav{
+    background-color: black;
+    width: 85px !important;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+knav.wd-knav-bg{
+    padding: 0;
+}
+
+.wd-anav{
+    padding: 0px !important;
+    max-width: 200px !important ;
+    min-width: 190px !important;
+}
+
+.profile {
+    width: 100%;
+}
+
+.wd-hyperlink span {
+    color: red !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+.wd-hyperlink a{
+    text-decoration: none !important;
+}
+
+.wd-no-padding-lr{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.wd-no-underline{
+    text-decoration: none;
+    color: black;
+}
+
+
+.wd-cs-smalltxt{
+    font-size: 0.8em;
+    color: rgb(143, 143, 143);
+}
+.wd-red-text {
+    color: red !important;
+}
+.wd-black-text {
+    color: black;
+}
+.wd-white-text {
+    color: white;
+}
+.wd-black-background{
+    background-color: black;
+}
+.wd-white-background{
+    background-color: white;
+}
+
+.wd-no-padding-border{
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+coursestatus{
+    padding-left: 5px !important;
+    padding-right: 0px !important;
+}
+coursestatus .container button{
+    font-size: small;
+    max-height: 50px;
+}
+
+.wd-green-left-border {
+    border-left: 5px solid green;
+}
+
+.wd-nomax-width {
+    max-width: 100% !important;
+}
+
+.wd-ellipse {
+    display: inline-block;
+    border: 1px solid rgb(73, 72, 72);
+    border-radius: 40%; 
+    padding: 3px;
+    size: 10px;
+    text-align: center; 
+}
+
+.wd-grade td.wd-grade-left {
+    text-align: left !important;
+}
+
+.wd-ph-center {
+    text-align: center !important;
+}
+
+.wd-image-container {
+    width: 250px !important;
+    height: 200px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wd-fontsize-small{
+    font-size: 0.8em !important;
+}
+.wd-fontsize-large{
+    font-size: 1.2em !important;
+}

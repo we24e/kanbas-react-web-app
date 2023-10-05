@@ -1,0 +1,25 @@
+.wd-kanbas-cs-side {
+    list-style: none;
+    padding: 0;
+    margin-left: 24px;
+}
+
+.wd-kanbas-cs-side li {
+    margin: 15px 0;
+}
+
+.wd-kanbas-cs-side li a {
+    text-decoration: none; 
+    word-wrap: break-word;
+    display: block;
+    color: red; 
+    text-align: left;
+    padding-left: 10px; 
+    font-size: 1.1em;
+}
+
+.wd-kanbas-cs-side li.wd-selected a{
+    color: black;
+    border-left: 2.5px solid black;
+    padding-left: 8px;
+}

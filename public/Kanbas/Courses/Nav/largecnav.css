@@ -1,0 +1,68 @@
+.wd-lhs-icon{
+    font-size: 2.2rem; 
+}
+.wd-dropdown-icon {
+    font-size: 1.1rem; 
+}
+.wd-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: black;
+}
+a {
+    text-decoration: none;
+}
+
+.wd-btn-text {
+    display: none;
+}
+.wd-dropdown-icon {
+    font-size: 1.25rem;
+    margin: 0 10px;
+}
+.wd-student-view-icon {
+    font-size: 1.25rem;
+    margin: 0 10px;
+    margin-top: 15px;
+    margin: 0 !important;
+    color: white;
+    background-color: black;
+}
+
+.wd-breadcrumb {
+    text-align: center;
+    display: block;
+    padding-left: 0;
+}
+.breadcrumb-item::before{
+    content: none !important;
+}
+.wd-headerbar{
+    padding: 10px;
+}
+
+
+
+.wd-kanbas-nav {
+    padding: 5px;
+}
+.wd-kanbas-nav li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+.wd-kanbas-nav a {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    margin-bottom: 1px;
+}
+
+.wd-kanbas-nav i {
+    margin-right: 10px;
+    font-size: 1.7em;
+}
+
+.wd-icon-fontsize{
+    font-size: 14px;
+}
