@@ -1,0 +1,17 @@
+.wd-modules i{
+    font-size: 1.2em;
+}
+
+.wd-modules i.fa.fa-check-circle{
+    color: rgb(30, 205, 30);
+    font-size: 1.4em !important;
+}
+
+.wd-edit-icon{
+    color: rgb(30, 205, 30);
+    font-size: 1.5em !important;
+}
+
+.wd-pidot{
+    font-size: 1.3em;
+}

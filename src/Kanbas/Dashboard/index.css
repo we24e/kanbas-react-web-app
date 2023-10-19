@@ -1,0 +1,131 @@
+.wd-dash .col {
+    min-width: 270px;
+    max-width: 290px; 
+}
+
+h1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px!important;
+}
+
+h2 {
+    margin-right: 50px;
+}
+
+.wd-dash .card {
+    margin-top: 31px !important;
+    margin-bottom: 30px !important;
+}
+
+.wd-dash{
+    padding-bottom: 30px;
+}
+
+.wd-dash-title {
+    margin-top: 10px;
+    margin-left: 20px !important;
+    margin-right: 0px !important;
+    margin-bottom: 10px ;
+    padding-left: 10px!important;
+    padding-right: 0px!important;
+}
+
+.wd-dash-contain {
+    margin-top: 10px;
+    margin-left: 40px !important;
+    margin-right: 0px !important;
+    margin-bottom: 5px ;
+    padding-left: 10px!important;
+    padding-right: 0px!important;
+    padding-bottom: 30px;
+}
+.card-color-top1 {
+    background-color: greenyellow; 
+    height: 200px; 
+}
+
+.card-color-top2 {
+    background-color: purple; 
+    height: 200px; 
+}
+
+.card-color-top3 {
+    background-color: blue; 
+    height: 200px; 
+}
+
+.card-color-top4 {
+    background-color: yellow; 
+    height: 200px; 
+}
+
+.card-color-top5 {
+    background-color: cyan; 
+    height: 200px; 
+}
+
+.card-color-top6 {
+    background-color: rgb(189, 51, 139); 
+    height: 200px; 
+}
+
+.card-color-top7 {
+    background-color: rgb(97, 229, 31); 
+    height: 200px; 
+}
+
+.wd-h5-link:hover {
+    text-decoration: underline;
+}
+
+.card-body{
+    padding-bottom: 0 !important;
+}
+.wd-h5-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.wd-h5-link {
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; 
+    color: rgb(83, 83, 209);
+}
+
+.card-text a{
+    color: black;
+}
+
+.icon-pencil {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    font-size: 1.8em !important;
+}
+
+.card-text {
+    height: 2em;
+} 
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+body{
+    margin-left: 12px !important;
+}
+
+.ellipsis-icon {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    color: white;
+    font-size: 20px;  
+    height: 1.2em;
+}
+
