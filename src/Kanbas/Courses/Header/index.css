@@ -1,0 +1,46 @@
+.wd-lhs-icon{
+    font-size: 2.2rem; 
+}
+.wd-dropdown-icon {
+    font-size: 1.1rem; 
+}
+.wd-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: black;
+    font-size: 1.2rem;
+}
+.wd-header {
+    width: 95% !important;
+}
+a {
+    text-decoration: none !important;
+}
+.wd-header-font {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 576px) {
+    .wd-btn-text {
+        display: none;
+    }
+    .wd-student-view-icon, .wd-dropdown-icon {
+        font-size: 1.25rem;
+        margin: 0 10px;
+    }
+    .wd-lhs-icon{
+        font-size: 2.2rem;
+        margin: 0 10px;
+    }
+    .wd-student-view-icon {
+        margin-top: 15px;
+        margin: 0 !important;
+    }
+    .wd-breadcrumb {
+        text-align: center !important;
+        display: block !important;
+        padding-left: 0;
+    }
+    .breadcrumb-item::before{
+        content: none !important;
+    }
+}
