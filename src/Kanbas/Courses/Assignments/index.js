@@ -1,21 +1,29 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
-import "./index.css"
+import React, { useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import "./index.css";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import { MdEditDocument } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteAssignment } from "./assignmentsReducer";
 
 function Assignments() {
     const { courseId } = useParams();
-    let realID = courseId || 'RS102';
-    if (!realID.includes("RS")) {
-        realID = 'RS102';
-    }
-    const assignments = db.assignments;
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
     const courseAssignments = assignments.filter(
-        (assignment) => assignment.course === realID
+        (assignment) => assignment.course === courseId
     );
 
+    const handleDeleteAssignment = (assignmentId) => {
+        if (window.confirm("Are you sure you want to remove this assignment?")) {
+            dispatch(deleteAssignment(assignmentId));
+        }
+    };
+
+    const handleAddAssignment = () => {
+        navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
+    };
     return (
         <div className="me-4">
             <script src="../../../bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -26,7 +34,7 @@ function Assignments() {
                     </form>
                     <div className="wd-mod-buttons">
                         <button type="button" className="btn btn-outline-dark btn-light me-1">+ Group</button>
-                        <button type="button" className="btn btn-danger me-1">+ Assignment</button>
+                        <button type="button" className="btn btn-danger me-1" onClick={handleAddAssignment}>+ Assignment</button>
                         <button type="button" className="btn btn-outline-dark btn-light">
                             <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
                         </button>
@@ -46,26 +54,34 @@ function Assignments() {
                 </div>
 
                 {courseAssignments.map((assignment) => (
-                    <Link
-                        key={assignment._id}
-                        to={`/Kanbas/Courses/${realID}/Assignments/${assignment._id}`}
-                        className="list-group-item list-group-item-action ps-2 pe-2"
-                    >
-                        <div className="d-flex align-items-center">
+                    <div key={assignment._id} className="list-group-item list-group-item-action ps-2 pe-2 d-flex justify-content-between align-items-center">
+                        <Link
+                            to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                            className="d-flex align-items-center text-decoration-none"
+                            style={{ flexGrow: 1 }}
+                        >
                             <PiDotsSixVerticalBold className="me-2 mb-1 mt-1 fw-bold wd-pidot" />
                             <MdEditDocument className="me-2 wd-edit-icon" />
                             <div className="ms-2 mt-1 mb-1">
-                                <div className="fw-bold">{assignment.title}</div>
+                                <div className="fw-bold text-dark">{assignment.title}</div>
                                 <div className="wd-cs-smalltxt">{assignment.weekinfo}</div>
                                 <div className="wd-cs-smalltxt"><b>Due</b> {assignment.due} | 100 pts</div>
                             </div>
-                            <div className="ms-auto">
-                                <i className="fa fa-check-circle ms-2" aria-hidden="true"></i>
-                                <i className="fa fa-ellipsis-v ms-4 me-2" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </Link>
+                        </Link>
+                        <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={() => {
+                                if (window.confirm("Are you sure you want to remove this assignment?")) {
+                                    dispatch(deleteAssignment(assignment._id));
+                                }
+                            }}
+                        >
+                            Delete
+                        </button>
+                    </div>
                 ))}
+
             </div>
         </div>
     );
