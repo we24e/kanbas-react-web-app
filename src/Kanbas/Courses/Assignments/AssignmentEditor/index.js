@@ -1,23 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
+import { useDispatch } from "react-redux";
+import { addAssignment, updateAssignment } from "../assignmentsReducer";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function AssignmentEditor() {
-    const { assignmentId} = useParams();
-    const { courseId } = useParams();
-    let realID = courseId || 'RS102';
-    if (!realID.includes("RS")) {
-        realID = 'RS102';
-    }
-    const assignment = db.assignments.find(
-        (assignment) => assignment._id === assignmentId
-    );
     const navigate = useNavigate();
-    const handleSave = () => {
-        console.log("Actually saving assignment TBD in later assignments");
-        navigate(`/Kanbas/Courses/${realID}/Assignments`);
+    const { courseId, assignmentId } = useParams();
+    const dispatch = useDispatch();
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+
+    const [assignment, setAssignment] = useState({
+        _id: null,
+        title: '',
+        weekinfo: '',
+        due: '',
+        available: '',
+        until: '',
+    });
+
+    useEffect(() => {
+        if (assignmentId === 'new') {
+            setAssignment({
+                _id: null,
+                title: '',
+                weekinfo: '',
+                due: '',
+                available: '',
+                until: '',
+            });
+        } else {
+            const existingAssignment = assignments.find(asgn => asgn._id === assignmentId);
+            if (existingAssignment) {
+                setAssignment(existingAssignment);
+            } else {
+                // impossible
+            }
+        }
+    }, [assignmentId, assignments]);
+
+
+    const [isNewAssignment, setIsNewAssignment] = useState(() => {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id') === 'new';
+    });
+
+    const handleSave = async () => {
+        if (assignmentId === 'new') {
+            const newId = new Date().getTime().toString();
+            const newAssignment = {
+                ...assignment,
+                _id: newId,
+                course: courseId
+            };
+            const actionResult = dispatch(addAssignment(newAssignment));
+            console.log('New assignment added:', actionResult.payload);
+            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+        } else {
+            const updatedAssignment = {
+                ...assignment,
+                course: courseId 
+            };
+            dispatch(updateAssignment(updatedAssignment));
+            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+        }
     };
 
+    const handleDueChange = (e) => {
+        setAssignment({ ...assignment, due: e.target.value });
+    };
+
+    const handleAvailableChange = (e) => {
+        setAssignment({ ...assignment, available: e.target.value });
+    };
+
+    const handleUntilChange = (e) => {
+        setAssignment({ ...assignment, until: e.target.value });
+    };
+
+    const handleTitleChange = (e) => {
+        setAssignment({ ...assignment, title: e.target.value });
+    };
+
+    const handleWeekInfoChange = (e) => {
+        setAssignment({ ...assignment, weekinfo: e.target.value });
+    };
     return (
         <div className="container">
 
@@ -29,12 +97,22 @@ function AssignmentEditor() {
                     <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
                 </button>
             </div>
-            <hr className="me-4"/>
+            <hr className="me-4" />
             <div className="ms-2 me-2 mb-2 mt-2 pe-2">
                 <label htmlFor="assignname" className="form-label">Assignment Name</label>
-                <input className="form-control pb-2 pt-2" id="assignname" value={assignment.title} />
-                <textarea className="form-control mt-4 pb-2 pt-2" id="assigndes" rows="4">
-                    {assignment.weekinfo}
+                <input
+                    className="form-control pb-2 pt-2"
+                    id="assignname"
+                    value={isNewAssignment ? '' : assignment.title}
+                    onChange={handleTitleChange}
+                />
+                <textarea
+                    className="form-control mt-4 pb-2 pt-2"
+                    id="assigndes"
+                    rows="4"
+                    value={isNewAssignment ? '' : assignment.weekinfo}
+                    onChange={handleWeekInfoChange}
+                >
                 </textarea>
             </div>
 
@@ -45,7 +123,7 @@ function AssignmentEditor() {
                         <div className="mt-3 row">
                             <label for="points" className="col-sm-4 col-form-label text-end">Points</label>
                             <div className="col-sm-8">
-                                <input type="number" className="form-control" id="points" value="100" min="0"/>
+                                <input type="number" className="form-control" id="points" value="100" min="0" />
                             </div>
                         </div>
 
@@ -103,63 +181,63 @@ function AssignmentEditor() {
                                 <div className="mb-2 fw-bold">Online Entry Options</div>
                                 <div className="form-check mt-2">
                                     <label className="form-check-label w-100">
-                                        <input type="checkbox" className="form-check-input" checked/> Text Entry
+                                        <input type="checkbox" className="form-check-input" checked /> Text Entry
                                     </label>
                                 </div>
                                 <div className="form-check mt-3">
                                     <label className="form-check-label w-100">
-                                        <input type="checkbox" className="form-check-input"/> Website URL
+                                        <input type="checkbox" className="form-check-input" /> Website URL
                                     </label>
                                 </div>
                                 <div className="form-check mt-3">
                                     <label className="form-check-label w-100">
-                                        <input type="checkbox" className="form-check-input"/> Media Recordings
+                                        <input type="checkbox" className="form-check-input" /> Media Recordings
                                     </label>
                                 </div>
                                 <div className="form-check mt-3">
                                     <label className="form-check-label w-100">
-                                        <input type="checkbox" className="form-check-input" checked/> File Uploads
+                                        <input type="checkbox" className="form-check-input" checked /> File Uploads
                                     </label>
                                 </div>
                                 <div className="form-check mt-3">
                                     <label className="form-check-label w-100">
-                                        <input type="checkbox" className="form-check-input"/> Student Annotation
+                                        <input type="checkbox" className="form-check-input" /> Student Annotation
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div className="container-fluid">
-                        <div className="mt-4 row">
-                            <label className="col-sm-4 col-form-label text-end">Assign</label>
-                            <div className="col-sm-8 border p-3">
-                                <div className="mb-3">
-                                    <label for="AssignTo" className="fw-bold col-form-label w-50 text-start">Assign to</label>
-                                    <input className="form-control pt-2 pb-2" id="AssignTo" value="Everyone"/>
-                                </div>
+                            <div className="mt-4 row">
+                                <label className="col-sm-4 col-form-label text-end">Assign</label>
+                                <div className="col-sm-8 border p-3">
+                                    <div className="mb-3">
+                                        <label for="AssignTo" className="fw-bold col-form-label w-50 text-start">Assign to</label>
+                                        <input className="form-control pt-2 pb-2" id="AssignTo" value="Everyone" />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="due" className="fw-bold col-form-label w-50 text-start">Due</label>
+                                        <input type="date" className="form-control pt-2 pb-2" id="due" value={assignment.due} onChange={handleDueChange} />
+                                    </div>
 
-                                <div className="mb-3">
-                                    <label for="due" className="fw-bold col-form-label w-50 text-start">Due</label>
-                                    <input type="date" className="form-control pt-2 pb-2" id="due" value="2023-09-18"/>
-                                </div>
-                                
-                                <div className="row mb-3">
-                                    <div className="col">
-                                        <label for="Available" className="fw-bold col-form-label text-start">Available from</label>
-                                        <input type="date" className="form-control pt-2 pb-2" id="Available" value="2023-09-08"/>
+                                    <div className="row mb-3">
+                                        <div className="col">
+                                            <label htmlFor="Available" className="fw-bold col-form-label text-start">Available from</label>
+                                            <input type="date" className="form-control pt-2 pb-2" id="Available" value={assignment.available} onChange={handleAvailableChange} />
+                                        </div>
+                                        <div className="col">
+                                            <label htmlFor="until" className="fw-bold col-form-label text-start">Until</label>
+                                            <input type="date" className="form-control pt-2 pb-2" id="until" value={assignment.until} onChange={handleUntilChange} />
+                                        </div>
                                     </div>
-                                    <div className="col">
-                                        <label for="until" className="fw-bold col-form-label text-start">Until</label>
-                                        <input type="date" className="form-control pt-2 pb-2" id="until" value="2023-09-22"/>
-                                    </div>
+
+                                    <button type="button" className="btn btn-light btn-outline-secondary w-100 mt-1">+ Add</button>
                                 </div>
-                                <button type="button" className="btn btn-light btn-outline-secondary w-100 mt-1">+ Add</button>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
             <hr className="me-4" />
@@ -174,7 +252,7 @@ function AssignmentEditor() {
                         <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-secondary btn-outline-dark btn-lg btn-light me-2">
                             Cancel
                         </Link>
-                        <button onClick={handleSave} className="btn btn-primary btn-lg btn-danger">
+                        <button type="button" onClick={handleSave} className="btn btn-primary btn-lg btn-danger">
                             Save
                         </button>
                     </div>

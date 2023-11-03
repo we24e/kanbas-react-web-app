@@ -9,31 +9,27 @@ import AssignmentEditor from './Assignments/AssignmentEditor';
 import Grades from './Grades';
 import db from "../Database";
 
-function Courses() {
+function Courses({ courses }) {
     const { courseId } = useParams();
-    let realID = courseId || 'RS102';
-    if (!realID.includes("RS")) {
-        realID = 'RS102';
-    }
-
+    const courseIdValue = !isNaN(courseId) ? Number(courseId) : courseId;
+    const course = courses.find((course) => course._id === courseIdValue); 
     const location = useLocation();
     let currentModule = location.pathname.split('/').pop().replace(/-/g, ' ');
 
     if (currentModule.startsWith('A1') || currentModule.startsWith('A2') || currentModule.startsWith('A3') || currentModule.startsWith('A4') || currentModule.startsWith('A5')) {
-        
         const assignment = db.assignments.find(
             (assignment) => assignment._id === currentModule
         );
-    
+
         currentModule = `Assignments.${assignment.title}`;
-    }    
+    }
 
     return (
         <div>
-            <Header courseId={realID} module={currentModule} />
+            <Header course={course} module={currentModule} />
 
             <div style={{ display: 'flex', flexDirection: 'row'}}> 
-                <CourseNavigation courseId={realID} />
+                <CourseNavigation courseId={courseId} />
 
                 <div className="wd-full-width">
                     <Routes>

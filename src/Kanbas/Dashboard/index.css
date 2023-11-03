@@ -75,6 +75,23 @@ h2 {
     height: 200px; 
 }
 
+.card-color-top8 {
+    background-color: rgb(7, 7, 89); 
+    height: 200px; 
+}
+.card-color-top9 {
+    background-color: rgb(229, 31, 110); 
+    height: 200px; 
+}
+.card-color-top10 {
+    background-color: rgb(229, 74, 31); 
+    height: 200px; 
+}
+.card-color-top11 {
+    background-color: rgb(18, 164, 118); 
+    height: 200px; 
+}
+
 .wd-h5-link:hover {
     text-decoration: underline;
 }
@@ -128,4 +145,3 @@ body{
     font-size: 20px;  
     height: 1.2em;
 }
-

@@ -137,3 +137,7 @@ coursestatus .container button{
 .wd-vertical-algin {
     vertical-align: middle;;
 }
+
+.wd-h-algin {
+    text-align: center;
+}
