@@ -10,7 +10,8 @@ function WorkingWithObjects() {
         completed: false,
         score: 0,
     });
-    const URL = "http://localhost:4000/a5/assignment";
+    const API_BASE = process.env.REACT_APP_LAB_BASE;
+    const URL =`${API_BASE}/a5/assignment`;
     const fetchAssignment = async () => {
         const response = await axios.get(`${URL}`);
         setAssignment(response.data);
@@ -73,23 +74,20 @@ function WorkingWithObjects() {
 
 
             <h4>Retrieving Objects</h4>
-            <a href="http://localhost:4000/a5/assignment"
+            <a href={`${URL}`}
                 className="btn btn-primary me-2">
                 Get Assignment
             </a>
             <h4>Retrieving Properties</h4>
-            <a
-                href="http://localhost:4000/a5/assignment/title"
+            <a href={`${URL}/title`}
                 className="btn btn-primary me-2">
                 Get Title
             </a>
-            <a
-                href="http://localhost:4000/a5/assignment/score"
+            <a href={`${URL}/score`}
                 className="btn btn-primary me-2">
                 Get Score
             </a>
-            <a
-                href="http://localhost:4000/a5/assignment/completed"
+            <a href={`${URL}/completed`}
                 className="btn btn-primary me-2">
                 Check if Completed
             </a>
