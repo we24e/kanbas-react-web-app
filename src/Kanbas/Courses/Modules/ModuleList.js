@@ -8,7 +8,11 @@ import {
     startEditingModule,
     updateModule,
     setModule,
+    setModules
 } from "./modulesReducer";
+import { useEffect } from "react";
+import * as client from "./client";
+import { createModule, findModulesForCourse } from "./client";
 
 function ModuleList({ showAddModuleInput, setShowAddModuleInput }) {
     const { courseId } = useParams();
@@ -16,20 +20,32 @@ function ModuleList({ showAddModuleInput, setShowAddModuleInput }) {
     const module = useSelector((state) => state.modulesReducer.module);
     const editingModule = useSelector((state) => state.modulesReducer.editingModule);
     const dispatch = useDispatch();
-
+    useEffect(() => {
+        findModulesForCourse(courseId)
+            .then((modules) => {
+                dispatch(setModules(modules));
+            });
+    }, [courseId, dispatch]);
     const handleAddModule = () => {
-        dispatch(addModule({ ...module, course: courseId }));
+        createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
     };
     const handleDeleteModule = (moduleId) => {
-        dispatch(deleteModule(moduleId));
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
     };
+
     const handleStartEditing = (module) => {
         dispatch(startEditingModule(module));
         setShowAddModuleInput(true);
     };
-    const handleUpdateModule = () => {
+    const handleUpdateModule = async () => {
+        const status = await client.updateModule(module);
         dispatch(updateModule(module));
     };
+
 
     return (
         <div className="list-group wd-modules ms-2 mt-2 me-4 mb-2">
@@ -67,7 +83,7 @@ function ModuleList({ showAddModuleInput, setShowAddModuleInput }) {
                             <i className="fa fa-check-circle float-end ms-2" aria-hidden="true"></i>
                             <span className="fw-bold">{module.name} - </span>
                             <span>{module.description}</span>
-                            <br/>
+                            <br />
                             <button className="btn btn-warning wd-del-edit me-2 ms-3 mt-1" onClick={() => handleStartEditing(module)}>Edit</button>
                             <button className="btn btn-danger wd-del-edit mt-1" onClick={() => handleDeleteModule(module._id)}>Delete</button>
                         </div>

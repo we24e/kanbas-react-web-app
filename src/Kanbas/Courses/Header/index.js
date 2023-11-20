@@ -13,7 +13,7 @@ function Header({ course, module }) {
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb wd-breadcrumb mb-0">
                             <li className="breadcrumb-item">
-                                <span className="wd-red-text wd-header-font">{course ? course.number : 'Course Not Found'}</span>
+                                <span className="wd-red-text wd-header-font">{course ? course : 'Course Not Found'}</span>
                             </li>
                             {module.startsWith("Assignments.") ? (
                                 <>
