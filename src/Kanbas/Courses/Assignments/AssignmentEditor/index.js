@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { addAssignment, updateAssignment } from "../assignmentsReducer";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import * as client from "../client";
 
 function AssignmentEditor() {
     const navigate = useNavigate();
@@ -47,26 +49,23 @@ function AssignmentEditor() {
     });
 
     const handleSave = async () => {
-        if (assignmentId === 'new') {
-            const newId = new Date().getTime().toString();
-            const newAssignment = {
-                ...assignment,
-                _id: newId,
-                course: courseId
-            };
-            const actionResult = dispatch(addAssignment(newAssignment));
-            console.log('New assignment added:', actionResult.payload);
-            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-        } else {
-            const updatedAssignment = {
-                ...assignment,
-                course: courseId 
-            };
-            dispatch(updateAssignment(updatedAssignment));
-            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+        try {
+            if (assignmentId === 'new') {
+                const newAssignment = { ...assignment, course: courseId };
+                const response = await client.createAssignment(courseId, newAssignment);
+                dispatch(addAssignment(response));
+                navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+            } else {
+                const updatedAssignment = { ...assignment, course: courseId };
+                const response = await client.updateAssignment(updatedAssignment);
+                dispatch(updateAssignment(response)); 
+                navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+            }
+        } catch (error) {
+            console.error('Error saving assignment:', error);
         }
     };
-
+    
     const handleDueChange = (e) => {
         setAssignment({ ...assignment, due: e.target.value });
     };

@@ -8,12 +8,28 @@ import Assignments from './Assignments';
 import AssignmentEditor from './Assignments/AssignmentEditor';
 import Grades from './Grades';
 import db from "../Database";
+import axios from "axios";
+import { useEffect, useState } from 'react';
 
-function Courses({ courses }) {
+function Courses() {
+    const API_BASE = process.env.REACT_APP_API_BASE;
+    const COURSES_URL = `${API_BASE}/courses`;
     const { courseId } = useParams();
-    const courseIdValue = !isNaN(courseId) ? Number(courseId) : courseId;
-    const course = courses.find((course) => course._id === courseIdValue); 
+    const [course, setCourse] = useState({});
     const location = useLocation();
+    useEffect(() => {
+        const findCourseById = async () => {
+            try {
+                const response = await axios.get(`${COURSES_URL}/${courseId}`);
+                setCourse(response.data);
+            } catch (error) {
+                console.error('Error fetching course data:', error);
+            }
+        };
+
+        findCourseById();
+    }, [courseId]);
+    
     let currentModule = location.pathname.split('/').pop().replace(/-/g, ' ');
 
     if (currentModule.startsWith('A1') || currentModule.startsWith('A2') || currentModule.startsWith('A3') || currentModule.startsWith('A4') || currentModule.startsWith('A5')) {
@@ -23,10 +39,9 @@ function Courses({ courses }) {
 
         currentModule = `Assignments.${assignment.title}`;
     }
-
     return (
         <div>
-            <Header course={course} module={currentModule} />
+            <Header course={course.number} module={currentModule} />
 
             <div style={{ display: 'flex', flexDirection: 'row'}}> 
                 <CourseNavigation courseId={courseId} />
