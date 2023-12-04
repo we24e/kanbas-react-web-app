@@ -94,6 +94,7 @@ function UserTable() {
                                     {user.username}
                                 </Link>
                             </td>
+                            <td></td>
                             <td>{user.firstName}</td>
                             <td>{user.lastName}</td>
                             <td className="text-nowrap">
